@@ -15,7 +15,7 @@
 
 <div class="row justify-content-center p-4">
     <div class="col-sm-8">
-        <div class="card" style="background-color: #e6eeff">
+        <div class="card border-0" style="background-color: #D1DEF1">
             <div class="card-body">
                 <div class="col-sm-12" style="margin-bottom :10pt">
                     <div class="card" style="background-color: #4D678E">
