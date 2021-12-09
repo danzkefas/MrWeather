@@ -1,63 +1,105 @@
 @extends('layout')
 
 @section('content')
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1B304F">
-    <div class="container">
-    <img src="mrWeather.png" style="width:250px;height:80px;">
-        <div class="d-flex ms-auto">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn" style="background-color: #86AED2" type="submit">Search</button>
-            </form>
+<header>
+    <nav class="navbar navbar-dark" style="background-color: #1B304F">
+        <div class="container p-2">
+            <img src="{{ asset('img/mrWeather.png') }}" alt="logo" id="logo">
+            <div class="col-sm-4">
+                <form action="">
+                    <div class="input-group">
+                        <input type="search" name="searchQuery" class="form-control" placeholder="Search City" />
+                        <button type="submit" class="btn buttonSearch">
+                            <span data-feather="search"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
 
-<div class="row justify-content-center p-4">
-    <div class="col-sm-8">
-        <div class="card border-0" style="background-color: #D1DEF1">
-            <div class="card-body">
-                <div class="col-sm-12" style="margin-bottom :10pt">
-                    <div class="card" style="background-color: #4D678E">
-                        <div class="card-body">
-                            <div class="col-sm-3 ms-auto">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main class="px-3">
+        <div class="container text-white rounded-top main-weather">
+            <div class="row p-4 d-flex align-items-center">
+                <div class="col col-sm-3 text-center">
+                    <div class="row">
+                        <h1 class="m-0 fw-bold">4&#176;C</h1>
+                    </div>
+                    <div class="row">
+                        <h6 class="m-0">Feels Like 20&#176;C<h6>
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm-6">
-                        <div class="card" style="background-color: #86AED2">
-                            <div class="card-body">
-                                <h5 class="card-title">Forecast</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                                     when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
-                                                     into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                                                     passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                            </div>
-                        </div>
+                <div class="col col-sm-6">
+                    <div class="row">
+                        <span class="fw-bold p-0">Rainy Days</span>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="card" style="border-color: #4D678E">
-                            <div class="card-body">
-                                <h5 class="card-title">Weather Map</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                                     when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
-                                                     into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                                                     passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="row">Bandung, Indonesia</div>
                 </div>
-            </div>   
+                <div class="col col-sm-3 text-end">
+                    Icon
+                </div>
+            </div>
         </div>
-    </div>
+        <!-- Looping Side -->
+        <div class="container text-white rounded-bottom loop">
+            <!-- Loop Here -->
+            <div class="row p-1 d-flex align-items-center">
+                <div class="col col-sm-3 text-center">
+                    DAYS
+                </div>
+                <div class="col col-sm-6">
+                    icon Rainy Days
+                </div>
+                <div class="col col-sm-3">
+                    <div class="row text-end">
+                        MAX_TEMP
+                    </div>
+                    <div class="row text-end">
+                        MIN_TEMP
+                    </div>
+                </div>
+            </div>
+            <div class="row p-1 d-flex align-items-center">
+                <div class="col col-sm-3 text-center">
+                    DAYS
+                </div>
+                <div class="col col-sm-6">
+                    icon Rainy Days
+                </div>
+                <div class="col col-sm-3">
+                    <div class="row text-end">
+                        MAX_TEMP
+                    </div>
+                    <div class="row text-end">
+                        MIN_TEMP
+                    </div>
+                </div>
+            </div>
+            <div class="row p-1 d-flex align-items-center">
+                <div class="col col-sm-3 text-center">
+                    DAYS
+                </div>
+                <div class="col col-sm-6">
+                    icon Rainy Days
+                </div>
+                <div class="col col-sm-3">
+                    <div class="row text-end">
+                        MAX_TEMP
+                    </div>
+                    <div class="row text-end">
+                        MIN_TEMP
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer fixed-bottom text-white-50 text-center py-3 bg-dark">
+        <span>Powered by OpenWeatherMap API</span>
+    </footer>
+
 </div>
 
 @endsection

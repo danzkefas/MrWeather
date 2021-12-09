@@ -1,0 +1,32 @@
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+#logo {
+    height: auto;
+    width: auto;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.buttonSearch {
+    background-color: #86AED2 !important;
+}
+
+.main-weather {
+    background-color: #4D678E !important;
+}
+
+.cover-container {
+    max-width: 45em;
+}
+
+.header-container {
+    max-width: 80em;
+}
+
+.loop {
+    background-color: #86AED2 !important;
+}

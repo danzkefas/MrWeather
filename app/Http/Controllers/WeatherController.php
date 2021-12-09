@@ -22,7 +22,7 @@ class WeatherController extends Controller
         $responseFuture = Http::get("https://api.openweathermap.org/data/2.5/onecall?lat={$lat}&lon={$lon}&exclude=current,minutely,hourly,alerts&appid={$apiKey}&units=metric");
         $responseFutureJSON = $responseFuture->json();
 
-        //dd($responseFutureJSON);
-        return view('index');
+        // dd($responseJSON);
+        return view('index', compact('responseJSON', 'responseFutureJSON'));
     }
 }
