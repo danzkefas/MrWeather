@@ -3,16 +3,17 @@
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1B304F">
     <div class="container">
+    <img src="mrWeather.png" style="width:250px;height:80px;">
         <div class="d-flex ms-auto">
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-info" style="background-color: #86AED2" type="submit">Search</button>
+                <button class="btn" style="background-color: #86AED2" type="submit">Search</button>
             </form>
         </div>
     </div>
 </nav>
 
-<div class="row justify-content-center p-5">
+<div class="row justify-content-center p-4">
     <div class="col-sm-8">
         <div class="card" style="background-color: #e6eeff">
             <div class="card-body">
