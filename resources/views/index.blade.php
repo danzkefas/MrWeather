@@ -4,7 +4,7 @@
 <header>
     <nav class="navbar navbar-dark" style="background-color: #1B304F">
         <div class="container p-2">
-            <img src="{{ secure_asset('img/mrWeather.png') }}" alt="logo" id="logo">
+            <img src="{{ asset('img/mrWeather.png') }}" alt="logo" id="logo">
             <div class="col-sm-4">
                 <form action="">
                     <div class="input-group">
