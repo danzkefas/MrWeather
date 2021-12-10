@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [WeatherController::class, 'index']);
+Route::get('/', [WeatherController::class, 'index'])->name('index');

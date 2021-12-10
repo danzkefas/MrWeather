@@ -7,22 +7,36 @@ use Illuminate\Support\Facades\Http;
 
 class WeatherController extends Controller
 {
-    public function index(){
+    public function index(Request $request)
+    {
         $location = "Bandung";
+
+        if ($request->has('searchQuest')) {
+            # code...
+            $location = $request->get('searchQuest');
+        }
+
         $apiKey = config('services.openweathermap.key');
+
 
         //Current Weather API
         $response = Http::get("https://api.openweathermap.org/data/2.5/weather?q={$location}&appid={$apiKey}&units=metric");
-        $responseJSON = $response->json();
+        if ($response->getStatusCode() == 200) {
+            # code...
+            $responseJSON = $response->json();
+            $lat = $responseJSON['coord']['lat'];
+            $lon = $responseJSON['coord']['lon'];
 
-        $lat = $responseJSON['coord']['lat'];
-        $lon = $responseJSON['coord']['lon'];
-
-        //One Call API
-        $responseFuture = Http::get("https://api.openweathermap.org/data/2.5/onecall?lat={$lat}&lon={$lon}&exclude=current,minutely,hourly,alerts&appid={$apiKey}&units=metric");
-        $responseFutureJSON = $responseFuture->json();
+            //One Call API
+            $responseFuture = Http::get("https://api.openweathermap.org/data/2.5/onecall?lat={$lat}&lon={$lon}&exclude=current,minutely,hourly,alerts&appid={$apiKey}&units=metric");
+            $responseFutureJSON = $responseFuture->json();
+            return view('index', compact('responseJSON', 'responseFutureJSON'));
+        } else {
+            $responseCode = $response->getStatusCode();
+            $responsePhr = $response->getReasonPhrase();
+            return view('index', compact('responseCode', 'responsePhr'));
+        }
 
         // dd($responseJSON);
-        return view('index', compact('responseJSON', 'responseFutureJSON'));
     }
 }
