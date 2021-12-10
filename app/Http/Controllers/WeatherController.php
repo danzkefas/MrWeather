@@ -11,9 +11,9 @@ class WeatherController extends Controller
     {
         $location = "Bandung";
 
-        if ($request->has('searchQuest')) {
+        if ($request->has('searchQuery')) {
             # code...
-            $location = $request->get('searchQuest');
+            $location = $request->get('searchQuery');
         }
 
         $apiKey = config('services.openweathermap.key');
