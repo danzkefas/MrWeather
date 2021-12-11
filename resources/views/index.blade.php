@@ -23,7 +23,7 @@
     <main class="px-3">
         @isset($responseJSON)
             <div class="container text-white rounded-top main-weather">
-                <div class="row p-4 d-flex align-items-center">
+                <div class="row p-3 d-flex align-items-center">
                     <div class="col col-sm-3 text-center">
                         <div class="row">
                             <h1 class="m-0 fw-bold">{{ round($responseJSON['main']['temp']) }}&#176;C</h1>
@@ -40,7 +40,7 @@
                             <span class="fs-6 p-0">{{ $responseJSON['name'] }}, {{ $responseJSON['sys']['country'] }}</span>
                         </div>
                     </div>
-                    <div class="col col-sm-3 p-0 text-end">
+                    <div class="col col-sm-4 p-0 text-end">
                         <img src="http://openweathermap.org/img/wn/{{ $responseJSON['weather'][0]['icon'] }}@4x.png" alt="weather_icon">
                     </div>
                 </div>
