@@ -1,22 +1,27 @@
 @extends('layout')
 
 @section('content')
-<header>
-    <nav class="navbar navbar-dark" style="background-color: #1B304F">
-        <div class="container p-2">
-            <a href="{{ route('index') }}"><img src="{{ asset('img/mrWeather.png') }}" alt="logo" id="logo"></a>
-            <div class="col-sm-4">
-                <form action="{{ route('index') }}" method="GET">
-                    <div class="input-group">
-                        <input type="search" name="searchQuery" class="form-control" placeholder="Search City" />
-                        <button type="submit" class="btn buttonSearch">
-                            <span data-feather="search"></span>
-                        </button>
-                    </div>
-                </form>
+<header class="p-3 text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="{{ route('index') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="{{ asset('img/mrWeather.png') }}" alt="logo" id="logo" class="mx-auto">
+            </a>
+
+            <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
             </div>
+
+            <form class="col-12 col-lg-4 mb-3 mb-lg-0 me-lg-3" action="{{ route('index') }}" method="GET">
+                <div class="input-group">
+                    <input type="search" name="searchQuery" class="form-control" placeholder="Search City" />
+                    <button type="submit" class="btn buttonSearch">
+                        <span data-feather="search"></span>
+                    </button>
+                </div>
+            </form>
         </div>
-    </nav>
+    </div>
 </header>
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
