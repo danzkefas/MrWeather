@@ -24,7 +24,7 @@
     </div>
 </header>
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column mb-5">
     <main class="px-3">
         @isset($responseJSON)
             <div class="container text-white rounded-top main-weather">

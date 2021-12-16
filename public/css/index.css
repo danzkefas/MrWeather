@@ -23,8 +23,8 @@
     max-width: 45em;
 }
 
-.header-container {
-    max-width: 80em;
+header{
+    background-color: #1B304F;
 }
 
 .loop {
