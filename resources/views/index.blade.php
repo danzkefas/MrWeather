@@ -26,6 +26,7 @@
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column mb-5">
     <main class="px-3">
+        @if(Session::get('visited'))
         <div class="alert alert-info alert-dismissible fade show" role="alert">
             
             <h4 class="alert-heading">Data Insight</h4>
@@ -36,6 +37,7 @@
             </div>
             <button type="button" class="btn-close mx-auto" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+        @endif
         @isset($responseJSON)
         <div class="container text-white rounded-top main-weather">
             <div class="row p-3 d-flex align-items-center">

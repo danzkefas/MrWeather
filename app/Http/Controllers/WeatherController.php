@@ -19,6 +19,13 @@ class WeatherController extends Controller
 
         $apiKey = config('services.openweathermap.key');
 
+        //Check Session First Time
+        if(Session::has('visited')){
+            Session::put('visited', true);
+        } else {
+            Session::put('visited', false);
+        }
+
 
         //Current Weather API
         $response = Http::get("https://api.openweathermap.org/data/2.5/weather?q={$location}&appid={$apiKey}&units=metric");
