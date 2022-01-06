@@ -54,7 +54,7 @@
                         <span class="fw-bold p-0 fs-5">{{ ucfirst($responseJSON['weather'][0]['description']) }}</span>
                     </div>
                     <div class="row">
-                        <span class="fs-6 p-0">{{ $responseJSON['name'] }}, {{ $responseJSON['sys']['country'] }}</span>
+                        <span class="fs-6 p-0">{{ $responseJSON['name'] }}{{ isset($responseJSON['sys']['country']) ? ", " . $responseJSON['sys']['country'] : "" }}</span>
                     </div>
                 </div>
                 <div class="col col-sm-4 p-0 text-end">
